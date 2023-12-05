@@ -5,7 +5,7 @@ var NUM_INTERP_FRAMES = 100;
 
 var interp_images = [];
 function preloadInterpolationImages() {
-  for (var i = 0; i < NUM_INTERP_FRAMES; i++) {
+  for (var i = 1; i < NUM_INTERP_FRAMES; i++) {
     var path = INTERP_BASE + '/' + i + '.png';
     interp_images[i] = new Image();
     interp_images[i].src = path;
