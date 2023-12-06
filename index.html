@@ -91,17 +91,17 @@
           <h1 class="title is-1 publication-title">GaussianHead: Impressive 3D Gaussian-based Head Avatars with Dynamic Hybrid Neural Field</h1>
           <div class="is-size-5 publication-authors">
             <span class="author-block">
-              <a href="https://keunhong.com">Jie Wang</a><sup>1</sup>,</span>
+              <a>Jie Wang</a><sup>1</sup>,</span>
             <span class="author-block">
-              <a href="https://utkarshsinha.com">Xianyan Li</a><sup>1</sup>,</span>
+              <a>Xianyan Li</a><sup>1</sup>,</span>
             <span class="author-block">
-              <a href="https://jonbarron.info"> Jiucheng Xie</a><sup>1</sup>,
+              <a> Jiucheng Xie</a><sup>1</sup>,
             </span>
             <span class="author-block">
-              <a href="http://sofienbouaziz.com">Feng Xu</a><sup>2</sup>,
+              <a>Feng Xu</a><sup>2</sup>,
             </span>
             <span class="author-block">
-              <a href="https://www.danbgoldman.com"> Hao Gao</a><sup>1</sup>,
+              <a> Hao Gao</a><sup>1</sup>,
             </span>
           </div>
 
@@ -189,55 +189,23 @@
 <section class="hero is-light is-small">
   <div class="hero-body">
     <div class="container">
-      <div id="results-carousel" class="carousel results-carousel">
-        <div class="item item-steve">
-          <video poster="" id="steve" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/steve.mp4"
+      <div class="item item-steve">
+        <video poster="" height="100%">
+          <source src="./static/self reconstrution/id1_ours_project.mp4"
                     type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-chair-tp">
-          <video poster="" id="chair-tp" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/chair-tp.mp4"
+        </video>
+      </div>
+      <div class="item item-steve">
+        <video poster="" height="100%">
+          <source src="./static/self reconstrution/id6_ours_project.mp4"
                     type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-shiba">
-          <video poster="" id="shiba" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/shiba.mp4"
+        </video>
+      </div>
+      <div class="item item-steve">
+        <video poster="" height="100%">
+          <source src="./static/self reconstrution/id4_ours_project.mp4"
                     type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-fullbody">
-          <video poster="" id="fullbody" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/fullbody.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-blueshirt">
-          <video poster="" id="blueshirt" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/blueshirt.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-mask">
-          <video poster="" id="mask" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/mask.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-coffee">
-          <video poster="" id="coffee" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/coffee.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-toby">
-          <video poster="" id="toby" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/toby2.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
+        </video>
       </div>
     </div>
   </div>
@@ -252,31 +220,21 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            We present the first method capable of photorealistically reconstructing a non-rigidly
-            deforming scene using photos/videos captured casually from mobile phones.
-          </p>
-          <p>
-            Our approach augments neural radiance fields
-            (NeRF) by optimizing an
-            additional continuous volumetric deformation field that warps each observed point into a
-            canonical 5D NeRF.
-            We observe that these NeRF-like deformation fields are prone to local minima, and
-            propose a coarse-to-fine optimization method for coordinate-based models that allows for
-            more robust optimization.
-            By adapting principles from geometry processing and physical simulation to NeRF-like
-            models, we propose an elastic regularization of the deformation field that further
-            improves robustness.
-          </p>
-          <p>
-            We show that <span class="dnerf">Nerfies</span> can turn casually captured selfie
-            photos/videos into deformable NeRF
-            models that allow for photorealistic renderings of the subject from arbitrary
-            viewpoints, which we dub <i>"nerfies"</i>. We evaluate our method by collecting data
-            using a
-            rig with two mobile phones that take time-synchronized photos, yielding train/validation
-            images of the same pose at different viewpoints. We show that our method faithfully
-            reconstructs non-rigidly deforming scenes and reproduces unseen views with high
-            fidelity.
+            Previous head avatar methods have mostly relied on fixed explicit primitives (mesh, point) 
+            or implicit surfaces (Sign Distance Function) and volumetric neural radiance field, it challenging
+            to strike a balance among high fidelity, training speed, and resource consumption. The recent popularity
+            of hybrid field has brought novel representation, but is limited by relying on parameterization factors
+            obtained through fixed mappings. We propose GaussianHead: an head avatar algorithm based on anisotropic
+            3D gaussian primitives. We leverage canonical gaussians to represent dynamic scenes. Using explicit "dynamic" 
+            tri-plane as an efficient container for parameterized head geometry, aligned well with factors in the underlying 
+            geometry and tri-plane, we obtain aligned canonical factors for the canonical gaussians. With a tiny MLP, factors
+            are decoded into opacity and spherical harmonic coefficients of 3D gaussian primitives. Finally, we use efficient
+            differentiable gaussian rasterizer for rendering. Our approach benefits significantly from our novel representation
+            based on 3D gaussians, and the proper alignment transformation of underlying geometry structures and factors in 
+            tri-plane eliminates biases introduced by fixed mappings. Compared to state-of-the-art techniques, we achieve optimal
+            visual results in tasks such as self-reconstruction, novel view synthesis, and cross-identity reenactment 
+            while maintaining high rendering efficiency (0.12s per frame). Even the pores around the nose are clearly
+            visible in some cases. Code and additional video can be found on the project homepage.
           </p>
         </div>
       </div>
