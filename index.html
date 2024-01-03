@@ -148,8 +148,37 @@
       </div>
     </div>
   </div>
+  
+      <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Previous head avatar methods have mostly relied on fixed explicit primitives (mesh, point) 
+            or implicit surfaces (Sign Distance Function) and volumetric neural radiance field, it challenging
+            to strike a balance among high fidelity, training speed, and resource consumption. The recent popularity
+            of hybrid field has brought novel representation, but is limited by relying on parameterization factors
+            obtained through fixed mappings. We propose GaussianHead: an head avatar algorithm based on anisotropic
+            3D gaussian primitives. We leverage canonical gaussians to represent dynamic scenes. Using explicit "dynamic" 
+            tri-plane as an efficient container for parameterized head geometry, aligned well with factors in the underlying 
+            geometry and tri-plane, we obtain aligned canonical factors for the canonical gaussians. With a tiny MLP, factors
+            are decoded into opacity and spherical harmonic coefficients of 3D gaussian primitives. Finally, we use efficient
+            differentiable gaussian rasterizer for rendering. Our approach benefits significantly from our novel representation
+            based on 3D gaussians, and the proper alignment transformation of underlying geometry structures and factors in 
+            tri-plane eliminates biases introduced by fixed mappings. Compared to state-of-the-art techniques, we achieve optimal
+            visual results in tasks such as self-reconstruction, novel view synthesis, and cross-identity reenactment 
+            while maintaining high rendering efficiency (0.12s per frame). Even the pores around the nose are clearly
+            visible in some cases. Code and additional video can be found on the project homepage.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+  
 </section>
 
+  
 <section class="hero teaser">
   <div class="container is-max-desktop">
     <div class="hero-body">
@@ -257,33 +286,6 @@
 
 <section class="section">
   <div class="container is-max-desktop">
-    <!-- Abstract. -->
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Abstract</h2>
-        <div class="content has-text-justified">
-          <p>
-            Previous head avatar methods have mostly relied on fixed explicit primitives (mesh, point) 
-            or implicit surfaces (Sign Distance Function) and volumetric neural radiance field, it challenging
-            to strike a balance among high fidelity, training speed, and resource consumption. The recent popularity
-            of hybrid field has brought novel representation, but is limited by relying on parameterization factors
-            obtained through fixed mappings. We propose GaussianHead: an head avatar algorithm based on anisotropic
-            3D gaussian primitives. We leverage canonical gaussians to represent dynamic scenes. Using explicit "dynamic" 
-            tri-plane as an efficient container for parameterized head geometry, aligned well with factors in the underlying 
-            geometry and tri-plane, we obtain aligned canonical factors for the canonical gaussians. With a tiny MLP, factors
-            are decoded into opacity and spherical harmonic coefficients of 3D gaussian primitives. Finally, we use efficient
-            differentiable gaussian rasterizer for rendering. Our approach benefits significantly from our novel representation
-            based on 3D gaussians, and the proper alignment transformation of underlying geometry structures and factors in 
-            tri-plane eliminates biases introduced by fixed mappings. Compared to state-of-the-art techniques, we achieve optimal
-            visual results in tasks such as self-reconstruction, novel view synthesis, and cross-identity reenactment 
-            while maintaining high rendering efficiency (0.12s per frame). Even the pores around the nose are clearly
-            visible in some cases. Code and additional video can be found on the project homepage.
-          </p>
-        </div>
-      </div>
-    </div>
-    <!--/ Abstract. -->
-
     <!-- Paper video. -->
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
